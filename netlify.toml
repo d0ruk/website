@@ -9,3 +9,6 @@
 
 [context.deploy-preview]
   environment = { status = "preview" }
+
+[context.branch-deploy]
+  environment = { NODE_ENV = "development" }
