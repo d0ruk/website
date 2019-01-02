@@ -60,5 +60,6 @@
     "plugins": [
       "react-hot-loader/babel"
     ]
-  }
+  },
+  "homepage": "http://doruk.me"
 }
