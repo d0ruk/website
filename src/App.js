@@ -2,7 +2,7 @@ import React, { Component, createContext } from "react";
 import styled from "styled-components";
 import { hot } from "react-hot-loader/root";
 
-import ContactForm from "./components/ContactForm";
+import ContactForm from "./pages/ContactForm";
 import { isEmail } from "./util";
 
 export const AppContext = createContext({});
