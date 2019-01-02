@@ -9,15 +9,15 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
 const el = document.getElementById("root");
+renderApp();
 new CanvasNest(el, {
-  color: "255,0,0",
-  count: 80
+  color: "0,0,0",
+  count: 280
 });
 
-renderApp();
 serviceWorker.unregister();
 
-module.hot.accept(renderApp);
+if (module.hot) module.hot.accept(renderApp);
 
 function renderApp() {
   const App = require("./App").default;
