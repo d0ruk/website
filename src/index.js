@@ -12,7 +12,7 @@ const el = document.getElementById("root");
 renderApp();
 new CanvasNest(el, {
   color: "0,0,0",
-  count: 280
+  count: 280,
 });
 
 serviceWorker.unregister();

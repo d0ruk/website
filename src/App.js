@@ -21,7 +21,7 @@ class App extends Component {
     name: "",
     mail: "",
     subj: "",
-    body: ""
+    body: "",
   };
 
   render() {
@@ -34,7 +34,7 @@ class App extends Component {
           onName: ({ target: { value } }) => this.setState({ name: value }),
           onEmail: ({ target: { value } }) => this.setState({ mail: value }),
           onSubject: ({ target: { value } }) => this.setState({ subj: value }),
-          onBody: ({ target: { value } }) => this.setState({ body: value })
+          onBody: ({ target: { value } }) => this.setState({ body: value }),
         }}
       >
         <MAIN>
