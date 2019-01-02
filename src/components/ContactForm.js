@@ -34,6 +34,7 @@ const Wrapper = styled.section`
     font-family: Nova Square;
     font-size: 2em;
     outline: none;
+    transition: background-color .7s ease-in-out;
   }
 
   button:hover {
