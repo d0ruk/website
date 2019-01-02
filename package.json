@@ -19,7 +19,7 @@
     "start:server": "netlify-lambda serve src/functions -c server-config.js",
     "build": "npm run clean && run-s build:*",
     "build:client": "rescripts build",
-    "build:server": "netlify-lambda build src/functions",
+    "build:server": "NODE_ENV=production netlify-lambda build src/functions",
     "test": "rescripts test",
     "lint": "eslint src",
     "eject": "react-scripts eject",
