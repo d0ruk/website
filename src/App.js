@@ -1,8 +1,10 @@
 import React, { Component, createContext } from "react";
 import styled from "styled-components";
 import { hot } from "react-hot-loader/root";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
-import ContactForm from "./components/ContactForm";
+import ContactForm from "./pages/ContactForm";
 import { isEmail } from "./util";
 
 export const AppContext = createContext({});
@@ -40,6 +42,7 @@ class App extends Component {
         <MAIN>
           <ContactForm />
         </MAIN>
+        <ToastContainer />
       </AppContext.Provider>
     );
   }
@@ -56,6 +59,11 @@ class App extends Component {
   };
 
   onSubmit = () => {
+    fetch("/.netlify/functions/joke")
+      .then(res => res.json())
+      .then(data => toast.success(data.value))
+      .catch(err => (console.error(err), toast.error(err.message)));
+
     console.log("submitting: %O", this.state);
   };
 }
