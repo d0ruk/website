@@ -1,6 +1,6 @@
 [build]
   base    = "."
-  command = "yarn build"
+  command = "yarn build:client"
   publish = "build"
   functions = "build/fns"
 
