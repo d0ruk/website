@@ -4,5 +4,8 @@
   publish = "build"
   functions = "build/fns"
 
-[context.staging]
-  stage = "staging"
+[context.production]
+  environment = { status = "live" }
+
+[context.deploy-preview]
+  environment = { status = "preview" }
