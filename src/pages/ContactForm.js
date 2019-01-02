@@ -27,12 +27,7 @@ const ContactForm = () => (
         <Input placeholder="email" onChange={onEmail} />
         <H1>message</H1>
         <Input placeholder="subject" onChange={onSubject} />
-        <TextArea
-          placeholder="body"
-          cols="80"
-          rows="10"
-          onChange={onBody}
-        />
+        <TextArea placeholder="body" cols="80" rows="10" onChange={onBody} />
         <Button onClick={onSubmit} disabled={!isValid}>
           Send
         </Button>

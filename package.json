@@ -94,5 +94,6 @@
     "plugins": [
       "react-hot-loader/babel"
     ]
-  }
+  },
+  "proxy": "http://localhost:9000"
 }

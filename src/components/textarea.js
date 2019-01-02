@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-const TextArea = styled.textarea.attrs({ cols: "40", rows: "10" })`
+const TextArea = styled.textarea.attrs({
+  cols: "40",
+  rows: "10",
+})`
   border-radius: 0.3em;
   font-family: Balthazar;
   font-size: 1.5em;
