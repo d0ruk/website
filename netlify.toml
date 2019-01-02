@@ -5,5 +5,4 @@
   functions = "build/fns"
 
 [context.staging]
-  command = "echo 'staging'"
   stage = "staging"
