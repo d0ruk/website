@@ -17,8 +17,7 @@
   "scripts": {
     "start": "run-p start:*",
     "start:client": "craco start --verbose",
-    "start:client": "rescripts start",
-    "start:server": "netlify-lambda serve src/functions -c server-config.js",
+    "start:server": "netlify-lambda serve src/functions",
     "build": "npm run clean && run-s build:*",
     "build:client": "craco build",
     "build:server": "NODE_ENV=production netlify-lambda build src/functions",
