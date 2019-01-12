@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { AppContext } from "../App";
 
-import { Button, H1, Input, TextArea } from "../components";
+import { Button, H1, Input, TextArea } from "~c";
 
 const Wrapper = styled.section`
   display: flex;
@@ -20,14 +20,31 @@ const Wrapper = styled.section`
 
 const ContactForm = () => (
   <AppContext.Consumer>
-    {({ onName, onEmail, onSubject, onBody, onSubmit, isValid }) => (
+    {({
+      body,
+      name,
+      mail,
+      subj,
+      onName,
+      onEmail,
+      onSubject,
+      onBody,
+      onSubmit,
+      isValid,
+    }) => (
       <Wrapper>
         <H1>from</H1>
-        <Input placeholder="name" onChange={onName} />
-        <Input placeholder="email" onChange={onEmail} />
+        <Input value={name} placeholder="name" onChange={onName} />
+        <Input value={mail} placeholder="email" onChange={onEmail} />
         <H1>message</H1>
-        <Input placeholder="subject" onChange={onSubject} />
-        <TextArea placeholder="body" cols="80" rows="10" onChange={onBody} />
+        <Input value={subj} placeholder="subject" onChange={onSubject} />
+        <TextArea
+          value={body}
+          placeholder="body"
+          cols="80"
+          rows="10"
+          onChange={onBody}
+        />
         <Button onClick={onSubmit} disabled={!isValid}>
           Send
         </Button>

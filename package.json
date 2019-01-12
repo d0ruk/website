@@ -1,6 +1,6 @@
 {
   "name": "@doruk/website",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@rebass/grid": "^6.0.0-7",
@@ -16,18 +16,21 @@
   },
   "scripts": {
     "start": "run-p start:*",
-    "start:client": "rescripts start",
-    "start:server": "netlify-lambda serve src/functions -c server-config.js",
+    "start:client": "craco start --verbose",
+    "start:server": "netlify-lambda serve src/functions",
     "build": "npm run clean && run-s build:*",
-    "build:client": "rescripts build",
+    "build:client": "craco build",
     "build:server": "NODE_ENV=production netlify-lambda build src/functions",
-    "test": "rescripts test",
+    "test": "npm run lint && craco test",
     "lint": "eslint src",
     "eject": "react-scripts eject",
     "clean": "rimraf .cache build"
   },
   "eslintConfig": {
     "extends": "react-app",
+    "globals": {
+      "__env": true
+    },
     "rules": {
       "quotes": [
         2,
@@ -65,19 +68,20 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@rescripts/cli": "^0.0.7",
-    "@rescripts/rescript-env": "^0.0.3",
-    "babel-loader": "^8.0.4",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@craco/craco": "^3.2.3",
+    "craco-plugin-react-hot-reload": "^0.0.3",
+    "craco-preact": "^1.1.0",
     "dotenv": "^6.2.0",
+    "git-revision-webpack-plugin": "^3.0.3",
+    "license-webpack-plugin": "^2.0.4",
     "netlify-lambda": "^1.1.1",
     "npm-run-all": "^4.1.5",
     "react-hot-loader": "^4.6.3",
-    "react-scripts": "2.1.2",
-    "rimraf": "^2.6.2"
+    "react-scripts": "2.1.1",
+    "rimraf": "^2.6.2",
+    "webpack-bundle-analyzer": "^3.0.3"
   },
-  "rescripts": [
-    "env"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/d0ruk/website.git"
@@ -88,13 +92,5 @@
     "url": "https://github.com/d0ruk/website/issues"
   },
   "homepage": "http://doruk.me",
-  "babel": {
-    "presets": [
-      "react-app"
-    ],
-    "plugins": [
-      "react-hot-loader/babel"
-    ]
-  },
   "proxy": "http://localhost:9000"
 }

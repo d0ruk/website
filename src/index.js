@@ -8,6 +8,8 @@ import "typeface-nova-square";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
+window.__env = process.env;
+
 const el = document.getElementById("root");
 renderApp();
 new CanvasNest(el, {

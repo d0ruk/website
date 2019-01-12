@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "baseUrl": "./",
+  },
+  "include": ["src/**/*"],
+  "paths": {
+    "~/*": ["src/*"],
+    "~c/*": ["src/components/*"]
+  }
+}
