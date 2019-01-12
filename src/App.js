@@ -31,6 +31,7 @@ class App extends Component {
       <AppContext.Provider
         className="grid"
         value={{
+          ...this.state,
           isValid: this.isValid(),
           onSubmit: this.onSubmit,
           onName: ({ target: { value } }) => this.setState({ name: value }),
