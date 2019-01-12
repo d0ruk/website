@@ -1,3 +1,4 @@
+/* global __env */
 import React, { Component, createContext } from "react";
 import styled from "styled-components";
 import { hot } from "react-hot-loader/root";
@@ -9,6 +10,7 @@ import { isEmail } from "./util";
 
 export const AppContext = createContext({});
 
+const isProd = __env.mode === "production";
 const MAIN = styled.main`
   display: flex;
   height: auto;
@@ -63,7 +65,7 @@ class App extends Component {
     fetch("/.netlify/functions/joke")
       .then(res => res.json())
       .then(data => toast.success(data.value))
-      .catch(err => (console.error(err), toast.error(err.message)));
+      .catch(err => !isProd && console.table(err));
 
     console.log("submitting: %O", this.state);
   };

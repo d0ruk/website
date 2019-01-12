@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { AppContext } from "../App";
 
-import { Button, H1, Input, TextArea } from "../components";
+import { Button, H1, Input, TextArea } from "~c";
 
 const Wrapper = styled.section`
   display: flex;
