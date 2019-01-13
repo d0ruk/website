@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const INPUT = styled.input.attrs({ type: "text" })`
+const Input = styled.input.attrs({ type: "text" })`
   border-radius: 0.3em;
   font-family: Balthazar;
   font-size: 1.5em;
@@ -12,4 +12,4 @@ const INPUT = styled.input.attrs({ type: "text" })`
   }
 `;
 
-export default INPUT;
+export default Input;

@@ -4,3 +4,4 @@ export { default as Input } from "./input";
 export { default as TextArea } from "./textarea";
 export { default as A } from "./anchor";
 export { default as Img } from "./img";
+export { default as Main } from "./main";

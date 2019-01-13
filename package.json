@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "@rebass/grid": "^6.0.0-7",
+    "alfa": "^0.6.1",
     "canvas-nest.js": "^2.0.4",
-    "gridlex": "^2.7.1",
     "node-fetch": "^2.3.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

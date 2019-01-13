@@ -1,13 +1,13 @@
 import React from "react";
 import { render } from "react-dom";
 import CanvasNest from "canvas-nest.js";
-import "gridlex";
 import "typeface-balthazar";
 import "typeface-nova-square";
+import { Provider } from "alfa";
 
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-
+import * as actions from "./actions";
 window.__env = process.env;
 
 const el = document.getElementById("root");
@@ -23,5 +23,10 @@ if (module.hot) module.hot.accept(renderApp);
 
 function renderApp() {
   const App = require("./App").default;
-  render(<App />, el);
+  render(
+    <Provider data={{ ...actions }}>
+      <App />
+    </Provider>,
+    el
+  );
 }

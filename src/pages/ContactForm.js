@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
-import { AppContext } from "../App";
+import { subscribe } from "alfa";
 
 import { Button, H1, Input, TextArea } from "~c";
+import { isEmail } from "~/util";
 
 const Wrapper = styled.section`
   display: flex;
@@ -18,39 +19,74 @@ const Wrapper = styled.section`
   }
 `;
 
-const ContactForm = () => (
-  <AppContext.Consumer>
-    {({
-      body,
-      name,
-      mail,
-      subj,
-      onName,
-      onEmail,
-      onSubject,
-      onBody,
-      onSubmit,
-      isValid,
-    }) => (
+class ContactForm extends Component {
+  componentDidMount() {
+    this.nameInput.focus();
+  }
+
+  render() {
+    const {
+      name = "",
+      mail = "",
+      subject = "",
+      body = "",
+      sendMail,
+    } = this.props;
+
+    return (
       <Wrapper>
         <H1>from</H1>
-        <Input value={name} placeholder="name" onChange={onName} />
-        <Input value={mail} placeholder="email" onChange={onEmail} />
+        <Input
+          value={name}
+          name="name"
+          placeholder="name"
+          onChange={this.onChange}
+          ref={c => (this.nameInput = c)}
+        />
+        <Input
+          value={mail}
+          name="mail"
+          placeholder="email"
+          onChange={this.onChange}
+        />
         <H1>message</H1>
-        <Input value={subj} placeholder="subject" onChange={onSubject} />
+        <Input
+          value={subject}
+          placeholder="subject"
+          name="subject"
+          onChange={this.onChange}
+        />
         <TextArea
           value={body}
           placeholder="body"
+          name="body"
+          onChange={this.onChange}
           cols="80"
           rows="10"
-          onChange={onBody}
         />
-        <Button onClick={onSubmit} disabled={!isValid}>
+        <Button onClick={sendMail} disabled={!this.isValid()}>
           Send
         </Button>
       </Wrapper>
-    )}
-  </AppContext.Consumer>
-);
+    );
+  }
 
-export default ContactForm;
+  onChange = evt => this.props.set(evt.target.name, evt.target.value);
+
+  isValid = () => {
+    const { body, mail, name, subject } = this.props;
+
+    return (
+      body &&
+      isEmail(mail) &&
+      (name.length && name.length > 3 && name.length < 42) &&
+      (subject.length && subject.length > 5)
+    );
+  };
+}
+
+export default subscribe(
+  ContactForm,
+  ["set", "name", "mail", "subject", "body", "sendMail"],
+  ["name", "mail", "subject", "body"]
+);
