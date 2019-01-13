@@ -14,9 +14,7 @@ module.exports = function({ env, paths }) {
         new webpack.DefinePlugin({
           "process.env": {
             mode: JSON.stringify(env),
-            VERSION: JSON.stringify(gitRevisionPlugin.version()),
-            COMMITHASH: JSON.stringify(gitRevisionPlugin.commithash()),
-            BRANCH: JSON.stringify(gitRevisionPlugin.branch()),
+            commit: JSON.stringify(gitRevisionPlugin.commithash()),
           },
         }),
         whenDev(() => new BundleAnalyzerPlugin()),
