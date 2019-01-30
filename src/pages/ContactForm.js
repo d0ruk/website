@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { subscribe } from "alfa";
+import breakpoint from "styled-components-breakpoint";
 
 import { Button, H1, Input, TextArea } from "~c";
 import { isEmail } from "~/util";
@@ -17,6 +18,18 @@ const Wrapper = styled.section`
   button {
     align-self: flex-end;
   }
+
+  ${breakpoint("mobile")`
+    > * {
+      margin: 0.1em 0;
+    }
+  `};
+
+  ${breakpoint("tablet")`
+    > * {
+      margin: 0.2em 0;
+    }
+  `};
 `;
 
 class ContactForm extends Component {
@@ -61,8 +74,6 @@ class ContactForm extends Component {
           placeholder="body"
           name="body"
           onChange={this.onChange}
-          cols="80"
-          rows="10"
         />
         <Button onClick={sendMail} disabled={!this.isValid()}>
           Send
