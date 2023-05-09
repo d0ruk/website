@@ -1,6 +1,6 @@
 {
   "name": "@doruk/website",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "dependencies": {
     "@rebass/grid": "^6.0.0-7",
@@ -91,6 +91,6 @@
   "bugs": {
     "url": "https://github.com/d0ruk/website/issues"
   },
-  "homepage": "https://doruk.me",
+  "homepage": "https://doruk.link",
   "proxy": "http://localhost:9000"
 }
