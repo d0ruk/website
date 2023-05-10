@@ -21,6 +21,9 @@
     "build:client": "webpack --node-env production",
     "test": "eslint src"
   },
+  "config": {
+    "title": "doruk"
+  },
   "devDependencies": {
     "css-loader": "^6.7.3",
     "eslint": "^8.40.0",

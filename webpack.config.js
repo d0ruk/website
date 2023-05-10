@@ -60,6 +60,7 @@ module.exports = () => {
             new HtmlWebpackPlugin({
               filename: "index.html",
               template: resolve(PUB, "index.html"),
+              title: PKG.config.title,
             }),
           ]
         : []
