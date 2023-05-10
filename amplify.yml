@@ -6,9 +6,9 @@ frontend:
         - yarn install
     build:
       commands:
-        - yarn run build:client
+        - yarn build
   artifacts:
-    baseDirectory: /build
+    baseDirectory: build
     files:
       - "**/*"
   cache:

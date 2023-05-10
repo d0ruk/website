@@ -18,10 +18,8 @@
   "scripts": {
     "start": "run-p start:*",
     "start:client": "craco start --verbose",
-    "start:server": "netlify-lambda serve src/functions",
     "build": "npm run clean && run-s build:*",
     "build:client": "craco build",
-    "build:server": "NODE_ENV=production netlify-lambda build src/functions",
     "test": "npm run lint && craco test",
     "lint": "eslint src",
     "eject": "react-scripts eject",
@@ -75,7 +73,6 @@
     "craco-preact": "^1.1.0",
     "git-revision-webpack-plugin": "^3.0.3",
     "license-webpack-plugin": "^2.0.4",
-    "netlify-lambda": "^1.1.1",
     "npm-run-all": "^4.1.5",
     "react-hot-loader": "^4.6.3",
     "react-scripts": "2.1.1",
@@ -91,6 +88,5 @@
   "bugs": {
     "url": "https://github.com/d0ruk/website/issues"
   },
-  "homepage": "https://doruk.link",
-  "proxy": "http://localhost:9000"
+  "homepage": "https://doruk.link"
 }
