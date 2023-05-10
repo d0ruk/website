@@ -3,6 +3,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   globals: {
     __env: true,
@@ -28,5 +29,6 @@ module.exports = {
     ],
     "comma-dangle": ["error", "always-multiline"],
     "eol-last": ["error", "always"],
+    "no-unused-vars": ["warn"],
   },
 };
