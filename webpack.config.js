@@ -7,6 +7,7 @@ const GitRevisionPlugin = require("git-revision-webpack-plugin");
 const PKG = require("./package.json");
 
 const SRC = resolve(__dirname, "src");
+const PUB = resolve(__dirname, "public");
 const gitRevisionPlugin = new GitRevisionPlugin();
 
 module.exports = () => {
@@ -50,18 +51,18 @@ module.exports = () => {
     ].concat(
       isProd
         ? [
-            new MiniCssExtractPlugin(),
+            new MiniCssExtractPlugin({ chunkFilename: "[id].css" }),
             new BundleAnalyzerPlugin({
               openAnalyzer: false,
               analyzerMode: "static",
               reportFilename: "bundle.html",
             }),
-          ]
-        : [
             new HtmlWebpackPlugin({
-              template: "./index.html",
+              filename: "index.html",
+              template: resolve(PUB, "index.html"),
             }),
           ]
+        : []
     ),
     resolve: {
       alias: {
