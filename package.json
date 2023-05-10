@@ -1,6 +1,6 @@
 {
   "name": "@doruk/website",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "dependencies": {
     "@rebass/grid": "^6.0.0-7",
@@ -36,7 +36,8 @@
     "typescript": "^5.0.4",
     "webpack": "^5.82.0",
     "webpack-bundle-analyzer": "^3.0.3",
-    "webpack-cli": "^5.1.1"
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
   },
   "repository": {
     "type": "git",

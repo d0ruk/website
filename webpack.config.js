@@ -7,7 +7,6 @@ const GitRevisionPlugin = require("git-revision-webpack-plugin");
 const PKG = require("./package.json");
 
 const SRC = resolve(__dirname, "src");
-const PUB = resolve(__dirname, "public");
 const gitRevisionPlugin = new GitRevisionPlugin();
 
 module.exports = () => {
@@ -48,6 +47,11 @@ module.exports = () => {
           version: JSON.stringify(PKG.version),
         },
       }),
+      new HtmlWebpackPlugin({
+        filename: "index.html",
+        template: resolve(SRC, "index.html"),
+        title: PKG.config.title,
+      }),
     ].concat(
       isProd
         ? [
@@ -56,11 +60,6 @@ module.exports = () => {
               openAnalyzer: false,
               analyzerMode: "static",
               reportFilename: "bundle.html",
-            }),
-            new HtmlWebpackPlugin({
-              filename: "index.html",
-              template: resolve(PUB, "index.html"),
-              title: PKG.config.title,
             }),
           ]
         : []
@@ -75,6 +74,10 @@ module.exports = () => {
     devServer: {
       compress: true,
       historyApiFallback: true,
+      server: "https",
+      hot: "only",
+      open: true,
+      watchFiles: [SRC],
     },
   };
 };
