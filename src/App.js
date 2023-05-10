@@ -1,6 +1,5 @@
 import "react-toastify/dist/ReactToastify.min.css";
 import React, { Component } from "react";
-import { hot } from "react-hot-loader/root";
 import { ToastContainer } from "react-toastify";
 import { Flex, Box } from "@rebass/grid";
 
@@ -15,7 +14,6 @@ class App extends Component {
           <Box
             flex="1 1 auto"
             p={["0.5rem", 0, "1rem"]}
-            p={["0.5rem", 0, "1rem"]}
             width={["100vw", "80vw", "40vw"]}
           >
             <ContactForm />
@@ -27,4 +25,4 @@ class App extends Component {
   }
 }
 
-export default hot(App);
+export default App;

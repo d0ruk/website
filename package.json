@@ -1,12 +1,11 @@
 {
   "name": "@doruk/website",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "dependencies": {
     "@rebass/grid": "^6.0.0-7",
     "alfa": "^0.6.1",
     "canvas-nest.js": "^2.0.4",
-    "node-fetch": "^2.3.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-toastify": "^4.5.1",
@@ -17,67 +16,24 @@
   },
   "scripts": {
     "start": "run-p start:*",
-    "start:client": "craco start --verbose",
-    "build": "npm run clean && run-s build:*",
-    "build:client": "craco build",
-    "test": "npm run lint && craco test",
-    "lint": "eslint src",
-    "eject": "react-scripts eject",
-    "clean": "rimraf .cache build"
+    "build": "run-s build:*",
+    "start:client": "webpack serve --node-env development",
+    "build:client": "webpack --node-env production",
+    "test": "eslint src"
   },
-  "eslintConfig": {
-    "extends": "react-app",
-    "globals": {
-      "__env": true
-    },
-    "rules": {
-      "quotes": [
-        2,
-        "double"
-      ],
-      "arrow-parens": [
-        2,
-        "as-needed"
-      ],
-      "max-len": [
-        2,
-        80,
-        {
-          "ignoreComments": true,
-          "ignoreUrls": true,
-          "ignoreStrings": true,
-          "ignoreTemplateLiterals": true,
-          "ignoreRegExpLiterals": true
-        }
-      ],
-      "comma-dangle": [
-        "error",
-        "always-multiline"
-      ],
-      "eol-last": [
-        "error",
-        "always"
-      ]
-    }
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
-    "@babel/plugin-transform-object-assign": "^7.2.0",
-    "@craco/craco": "^3.2.3",
-    "craco-plugin-react-hot-reload": "^0.0.3",
-    "craco-preact": "^1.1.0",
+    "css-loader": "^6.7.3",
+    "eslint": "^8.40.0",
     "git-revision-webpack-plugin": "^3.0.3",
-    "license-webpack-plugin": "^2.0.4",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.5",
     "npm-run-all": "^4.1.5",
-    "react-hot-loader": "^4.6.3",
-    "react-scripts": "2.1.1",
-    "rimraf": "^2.6.2",
-    "webpack-bundle-analyzer": "^3.0.3"
+    "style-loader": "^3.3.2",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.82.0",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^5.1.1"
   },
   "repository": {
     "type": "git",

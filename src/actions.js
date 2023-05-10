@@ -12,5 +12,5 @@ export const sendMail = action(
 
     console.log("submitting: ", { name, mail, subject, body });
   },
-  ["name", "mail", "subject", "body"]
+  ["name", "mail", "subject", "body"],
 );
