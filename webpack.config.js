@@ -52,7 +52,7 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         filename: "index.html",
         template: resolve(SRC, "index.html"),
-        title: PKG.config.title,
+        title: isProd ? PKG.config.title : PKG.name,
       }),
     ].concat(
       isProd
@@ -84,6 +84,7 @@ module.exports = () => {
       open: true,
       static: {
         directory: ASSETS,
+        publicPath: "/assets",
       },
       watchFiles: [SRC, ASSETS],
     },
