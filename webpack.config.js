@@ -4,9 +4,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const GitRevisionPlugin = require("git-revision-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const PKG = require("./package.json");
 
 const SRC = resolve(__dirname, "src");
+const ASSETS = resolve(__dirname, "assets");
 const gitRevisionPlugin = new GitRevisionPlugin();
 
 module.exports = () => {
@@ -55,6 +57,9 @@ module.exports = () => {
     ].concat(
       isProd
         ? [
+            new CopyPlugin({
+              patterns: [{ from: ASSETS, to: "[path]/assets/[name][ext]" }],
+            }),
             new MiniCssExtractPlugin({ chunkFilename: "[id].css" }),
             new BundleAnalyzerPlugin({
               openAnalyzer: false,
@@ -77,7 +82,10 @@ module.exports = () => {
       server: "https",
       hot: "only",
       open: true,
-      watchFiles: [SRC],
+      static: {
+        directory: ASSETS,
+      },
+      watchFiles: [SRC, ASSETS],
     },
   };
 };
