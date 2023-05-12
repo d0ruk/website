@@ -970,13 +970,6 @@ caniuse-lite@^1.0.30001449:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001486.tgz#56a08885228edf62cbe1ac8980f2b5dae159997e"
   integrity sha512-uv7/gXuHi10Whlj0pp5q/tsK/32J2QSqVRKQhs2j8VsDCjgyruAh/eEXHF822VqO9yT6iZKw3nRwZRSPBE9OQg==
 
-canvas-nest.js@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/canvas-nest.js/-/canvas-nest.js-2.0.4.tgz#e010075d5dbbf3cbfc1ef18942c266b1af873469"
-  integrity sha512-Wgc+39fQBIP8fm9+Rq+Zt6+QLHZRsIKpaOQPL5KcWPlXTAalCKY4KCuklY7qzzZqBRF/t2APIrk+PuRw6ZlOog==
-  dependencies:
-    size-sensor "^0.2.0"
-
 chalk@^2.0.0, chalk@^2.4.1:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
@@ -3095,6 +3088,11 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+react-canvas-nest@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-canvas-nest/-/react-canvas-nest-1.1.1.tgz#e53687ad725a2131101276b565b144dde6863015"
+  integrity sha512-IPIzgsvom4ZCTjCZxEQZMMrqdus9jYFdnKclHd20EzUIE74I+qchNMTFKTGB3vtfo6FSrfBcjLQjdIKeDiUINA==
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -3456,11 +3454,6 @@ signal-exit@^3.0.3:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
-
-size-sensor@^0.2.0:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/size-sensor/-/size-sensor-0.2.6.tgz#6fe43afd570786f097171834002a97fe0b19a3da"
-  integrity sha512-0EZ0tXXjyRl9R9+JpoBdH57Xpnbf5NTyDdj7fnFL6KqCsdKyah286ShMflnV2SonnrSFH4OAT/52Jy8qqnoerg==
 
 slash@^4.0.0:
   version "4.0.0"

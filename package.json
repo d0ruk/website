@@ -1,12 +1,12 @@
 {
   "name": "@doruk/website",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "dependencies": {
     "@rebass/grid": "^6.0.0-7",
     "alfa": "^0.6.1",
-    "canvas-nest.js": "^2.0.4",
     "react": "^18.2.0",
+    "react-canvas-nest": "^1.1.1",
     "react-dom": "^18.2.0",
     "react-toastify": "^4.5.1",
     "styled-components": "^4.1.3",
