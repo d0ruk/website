@@ -179,6 +179,16 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.40.0.tgz#3ba73359e11f5a7bd3e407f70b3528abfae69cec"
   integrity sha512-ElyB54bJIhXQYVKjDSvCkPO1iU1tSAeVQJbllWJq1XQSmmA4dgFk8CbiBGpiOPxleE48vDogxCtmMYku4HSVLA==
 
+"@fontsource/balthazar@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/balthazar/-/balthazar-4.5.10.tgz#a8ff307da284e726fb76739d764050523ee9f715"
+  integrity sha512-e/FPaaQuN/5G5IxJ50fGUn/rKW7slCBkBNkPLrgdgiZ2sfYm7xr8afloEo9Yfu+oD/W3rgMp7Czj733VarXLAg==
+
+"@fontsource/nova-square@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/nova-square/-/nova-square-4.5.10.tgz#55321bce4f8094bd0516534ff147f6add061f074"
+  integrity sha512-6GcqnjPB9ZHNVQmwopwq5qk9kyC6DptKDP05EJD+11F74cmyLiEiu/SS1ZXy9+MW2Xp3psSsnMH208+j1jK7xQ==
+
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.8.tgz#03595ac2075a4dc0f191cc2131de14fbd7d410b9"
@@ -3803,16 +3813,6 @@ typed-array-length@^1.0.4:
     call-bind "^1.0.2"
     for-each "^0.3.3"
     is-typed-array "^1.1.9"
-
-typeface-balthazar@^0.0.71:
-  version "0.0.71"
-  resolved "https://registry.yarnpkg.com/typeface-balthazar/-/typeface-balthazar-0.0.71.tgz#df2111c5a080837e2505c8c6dfdaf08b52e11b87"
-  integrity sha512-95RC8GEus/9Rb7F5A2e8ozPwH/2Cpdmg7mpMDL952p/sH6DDzXAMyL/9gxG6yY1A+uklYafM7AORTPfhycPqjA==
-
-typeface-nova-square@^0.0.71:
-  version "0.0.71"
-  resolved "https://registry.yarnpkg.com/typeface-nova-square/-/typeface-nova-square-0.0.71.tgz#3fa7294a455cad07a4a4215380e8946184f9341d"
-  integrity sha512-+WTDIc6kNzPZdaqpBialBnOam7imCGMdNsNVM45f0VNGffXW3osb6+Egje+TBmnbMkoOOaOVAKliQ7Oe+IRODA==
 
 typescript@^5.0.4:
   version "5.0.4"

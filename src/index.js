@@ -1,5 +1,5 @@
-import "typeface-balthazar";
-import "typeface-nova-square";
+import "@fontsource/balthazar";
+import "@fontsource/nova-square";
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "alfa";

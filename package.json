@@ -3,6 +3,8 @@
   "version": "0.7.0",
   "private": true,
   "dependencies": {
+    "@fontsource/balthazar": "^4.5.10",
+    "@fontsource/nova-square": "^4.5.10",
     "@rebass/grid": "^6.0.0-7",
     "alfa": "^0.6.1",
     "react": "^18.2.0",
@@ -10,9 +12,7 @@
     "react-dom": "^18.2.0",
     "react-toastify": "^4.5.1",
     "styled-components": "^4.1.3",
-    "styled-components-breakpoint": "^2.1.1",
-    "typeface-balthazar": "^0.0.71",
-    "typeface-nova-square": "^0.0.71"
+    "styled-components-breakpoint": "^2.1.1"
   },
   "scripts": {
     "start": "run-p start:*",
