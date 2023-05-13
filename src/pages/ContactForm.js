@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-import { subscribe } from "alfa";
 import breakpoint from "styled-components-breakpoint";
 
 import { Button, H1, Input, TextArea } from "~c";
 import { isEmail } from "~/util";
+import { useStore } from "~/state";
 
 const Wrapper = styled.section`
   display: flex;
@@ -32,61 +32,25 @@ const Wrapper = styled.section`
   `};
 `;
 
-class ContactForm extends Component {
-  componentDidMount() {
-    this.nameInput.focus();
-  }
+const ContactForm = () => {
+  const inputRef = useRef();
+  const { name, mail, subject, body } = useStore(
+    ({ contactForm }) => contactForm,
+  );
+  const setContactForm = useStore(({ setContactForm }) => setContactForm);
+  const submitContactForm = useStore(
+    ({ submitContactForm }) => submitContactForm,
+  );
 
-  render() {
-    const {
-      name = "",
-      mail = "",
-      subject = "",
-      body = "",
-      sendMail,
-    } = this.props;
+  useEffect(
+    () => {
+      inputRef.current?.focus?.();
+    },
+    [inputRef],
+  );
 
-    return (
-      <Wrapper>
-        <H1>from</H1>
-        <Input
-          value={name}
-          name="name"
-          placeholder="name"
-          onChange={this.onChange}
-          ref={c => (this.nameInput = c)}
-        />
-        <Input
-          value={mail}
-          name="mail"
-          placeholder="email"
-          onChange={this.onChange}
-        />
-        <H1>message</H1>
-        <Input
-          value={subject}
-          placeholder="subject"
-          name="subject"
-          onChange={this.onChange}
-        />
-        <TextArea
-          value={body}
-          placeholder="body"
-          name="body"
-          onChange={this.onChange}
-        />
-        <Button onClick={sendMail} disabled={!this.isValid()}>
-          Send
-        </Button>
-      </Wrapper>
-    );
-  }
-
-  onChange = evt => this.props.set(evt.target.name, evt.target.value);
-
-  isValid = () => {
-    const { body, mail, name, subject } = this.props;
-
+  const onChange = evt => setContactForm(evt.target.name, evt.target.value);
+  const isValid = () => {
     return (
       body &&
       isEmail(mail) &&
@@ -94,10 +58,36 @@ class ContactForm extends Component {
       (subject.length && subject.length > 5)
     );
   };
-}
 
-export default subscribe(
-  ContactForm,
-  ["set", "name", "mail", "subject", "body", "sendMail"],
-  ["name", "mail", "subject", "body"]
-);
+  return (
+    <Wrapper>
+      <H1>from</H1>
+      <Input
+        value={name}
+        name="name"
+        placeholder="name"
+        onChange={onChange}
+        ref={inputRef}
+      />
+      <Input value={mail} name="mail" placeholder="email" onChange={onChange} />
+      <H1>message</H1>
+      <Input
+        value={subject}
+        placeholder="subject"
+        name="subject"
+        onChange={onChange}
+      />
+      <TextArea
+        value={body}
+        placeholder="body"
+        name="body"
+        onChange={onChange}
+      />
+      <Button onClick={submitContactForm} disabled={!isValid()}>
+        Send
+      </Button>
+    </Wrapper>
+  );
+};
+
+export default ContactForm;

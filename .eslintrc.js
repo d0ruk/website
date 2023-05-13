@@ -1,9 +1,15 @@
 module.exports = {
-  extends: ["eslint:recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+  ],
+  plugins: ["react-hooks", "import", "jsx-a11y"],
   env: {
     browser: true,
     es2021: true,
-    node: true,
+    // node: true,
   },
   globals: {
     __env: true,
